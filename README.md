@@ -1,0 +1,3 @@
+- [ ] Add configuration for the Instana agent to accept OTel
+- [ ] Add configuration for the OTel collector to forward data to the Instana agent
+- [ ] EUM?
