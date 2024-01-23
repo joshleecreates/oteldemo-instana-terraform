@@ -3,9 +3,9 @@ resource "helm_release" "instana_agent" {
   repository = "https://agents.instana.io/helm"
   chart = "instana-agent"
 
-  # values = [
-  #   "${file("instana-agent/configuration.yaml")}"
-  # ]
+  values = [
+    "${file("agent-configuration.yaml")}"
+  ]
 
   set {
     name = "agent.key"
