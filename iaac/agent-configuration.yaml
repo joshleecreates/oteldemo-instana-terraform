@@ -1,43 +1,45 @@
-com.instana.plugin.opentelemetry:
-  # enabled: false       # legacy setting, will only enable grpc, defaults to false
+opentelemetry:
   grpc:
-    enabled: true    # takes precedence over legacy settings above, defaults to true iff "grpc:" is present
+    enabled: true # takes precedence over legacy settings above, defaults to true iff "grpc:" is present
   http:
-    enabled: true     # allows to enable http endpoints, defaults to true iff "http:" is present
+    enabled: true # allows to enable http endpoints, defaults to true iff "http:" is present
 
-com.instana.ignore:
-  arguments:
-    # - '-javaagent:/opt/otel/opentelemetry-javaagent-all.jar'
-    # - '-javaagent:/app/opentelemetry-javaagent.jar'
-    # - '-javaagent:/tmp/opentelemetry-javaagent.jar'
+agent:
+  configuration_yaml: |
 
-com.instana.tracing:
-  extra-http-headers:
-    - traceparent
-    - tracestate
+    com.instana.ignore:
+      arguments:
+        # - '-javaagent:/opt/otel/opentelemetry-javaagent-all.jar'
+        # - '-javaagent:/app/opentelemetry-javaagent.jar'
+        # - '-javaagent:/tmp/opentelemetry-javaagent.jar'
 
-com.instana.plugin.generic.hardware:
-  enabled: true
+    com.instana.tracing:
+      extra-http-headers:
+        - traceparent
+        - tracestate
 
-# otel-demo configurations
-com.instana.plugin.postgresql:
-  user: 'ffs'
-  password: 'ffs'
-  database: 'postgres'
+    com.instana.plugin.generic.hardware:
+      enabled: true
 
-com.instana.plugin.javatrace:
-  instrumentation:
-    enabled: false
-  trace-jvms-with-problematic-agents: true
+    # otel-demo configurations
+    com.instana.plugin.postgresql:
+      user: 'ffs'
+      password: 'ffs'
+      database: 'postgres'
 
-com.instana.plugin.python:
-  autotrace:
-    enabled: false
+    com.instana.plugin.javatrace:
+      instrumentation:
+        enabled: false
+      trace-jvms-with-problematic-agents: true
 
-com.instana.plugin.php:
-  tracing:
-    enabled: false
+    com.instana.plugin.python:
+      autotrace:
+        enabled: false
 
-com.instana.plugin.netcore:
-  tracing:
-    enabled: false
+    com.instana.plugin.php:
+      tracing:
+        enabled: false
+
+    com.instana.plugin.netcore:
+      tracing:
+        enabled: false
