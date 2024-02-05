@@ -66,6 +66,7 @@ opentelemetry-collector:
             - batch
           receivers:
             - otlp
+            - prometheus
         traces:
           exporters:
             - otlp

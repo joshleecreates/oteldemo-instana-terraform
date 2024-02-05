@@ -6,6 +6,11 @@ opentelemetry:
 
 agent:
   configuration_yaml: |
+    com.instana.plugin.prometheus:
+      poll_rate: 5 
+      customMetricSources:
+      - url: '/'  
+        metricNameIncludeRegex: '.*' 
 
     com.instana.ignore:
       arguments:
