@@ -1,0 +1,380 @@
+[{
+  "id": "b2WSOCMCEbs-Um9Y",
+  "title": "Sent Metrics by Service",
+  "width": 4,
+  "height": 20,
+  "x": 4,
+  "y": 0,
+  "type": "pie",
+  "config": {
+    "shareMaxAxisDomain": false,
+    "y1": {
+      "formatter": "number.compact",
+      "renderer": "pie",
+      "metrics": [
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "MEAN",
+          "label": "",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.sums.otelcol/prometheusreceiver/otelcol_exporter_sent_metric_points",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry sums otelcol/prometheusreceiver/otelcol_exporter_sent_metric_points",
+          "crossSeriesAggregation": "MEAN"
+        }
+      ],
+      "formatterSelected": false
+    },
+    "y2": {
+      "formatter": "number.detailed",
+      "renderer": "line",
+      "metrics": []
+    }
+  }
+},
+{
+  "id": "YFSyMYYaRGJMHW2I",
+  "title": "Exporter Queue Size",
+  "width": 4,
+  "height": 20,
+  "x": 0,
+  "y": 0,
+  "type": "chart",
+  "config": {
+    "shareMaxAxisDomain": false,
+    "y1": {
+      "formatter": "number.compact",
+      "renderer": "line",
+      "metrics": [
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "MAX",
+          "label": "",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.gauges.otelcol/prometheusreceiver/otelcol_exporter_queue_size",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry gauge otelcol/prometheusreceiver/otelcol_exporter_queue_size",
+          "crossSeriesAggregation": "MAX"
+        }
+      ],
+      "formatterSelected": false
+    },
+    "y2": {
+      "formatter": "number.detailed",
+      "renderer": "line",
+      "metrics": []
+    },
+    "type": "TIME_SERIES"
+  }
+},
+{
+  "id": "918IyKUL0_nmplkC",
+  "title": "Spans Rate",
+  "width": 4,
+  "height": 22,
+  "x": 0,
+  "y": 20,
+  "type": "chart",
+  "config": {
+    "shareMaxAxisDomain": false,
+    "y1": {
+      "formatter": "number.compact",
+      "renderer": "line",
+      "metrics": [
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "PER_SECOND",
+          "label": "Spans Sent",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.sums.otelcol/prometheusreceiver/otelcol_exporter_sent_spans",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry sums otelcol/prometheusreceiver/otelcol_exporter_sent_spans",
+          "crossSeriesAggregation": "SUM"
+        },
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "MEAN",
+          "label": "Failed",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.sums.otelcol/prometheusreceiver/otelcol_exporter_send_failed_spans",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry sums otelcol/prometheusreceiver/otelcol_exporter_send_failed_spans",
+          "crossSeriesAggregation": "MEAN"
+        }
+      ],
+      "formatterSelected": false
+    },
+    "y2": {
+      "formatter": "number.detailed",
+      "renderer": "line",
+      "metrics": []
+    },
+    "type": "TIME_SERIES"
+  }
+},
+{
+  "id": "uQ14_7zYAd5v2Tyd",
+  "title": "Metrics Rate",
+  "width": 4,
+  "height": 22,
+  "x": 4,
+  "y": 20,
+  "type": "chart",
+  "config": {
+    "shareMaxAxisDomain": false,
+    "y1": {
+      "formatter": "number.compact",
+      "renderer": "area",
+      "metrics": [
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "PER_SECOND",
+          "label": "Metric Points Sent",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.sums.otelcol/prometheusreceiver/otelcol_exporter_sent_metric_points",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry sums otelcol/prometheusreceiver/otelcol_exporter_sent_metric_points",
+          "crossSeriesAggregation": "SUM"
+        },
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "PER_SECOND",
+          "label": "Failed",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "grouping": [
+            {
+              "maxResults": 5,
+              "by": {
+                "groupbyTag": "metric.tag.exporter",
+                "groupbyTagEntity": "NOT_APPLICABLE",
+                "groupbyTagSecondLevelKey": ""
+              },
+              "includeOthers": false,
+              "direction": "DESC"
+            }
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.sums.otelcol/prometheusreceiver/otelcol_exporter_send_failed_metric_points",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry sums otelcol/prometheusreceiver/otelcol_exporter_send_failed_metric_points",
+          "crossSeriesAggregation": "SUM"
+        }
+      ],
+      "formatterSelected": false
+    },
+    "y2": {
+      "formatter": "number.detailed",
+      "renderer": "line",
+      "metrics": []
+    },
+    "type": "TIME_SERIES"
+  }
+},
+{
+  "id": "KlsddxkCvBgd1X6F",
+  "title": "Memory & Heap Usage",
+  "width": 4,
+  "height": 20,
+  "x": 8,
+  "y": 0,
+  "type": "chart",
+  "config": {
+    "shareMaxAxisDomain": false,
+    "y1": {
+      "formatter": "bytes.compact",
+      "renderer": "line",
+      "metrics": [
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "MEAN",
+          "label": "",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.gauges.otelcol/prometheusreceiver/otelcol_process_memory_rss",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry gauge otelcol/prometheusreceiver/otelcol_process_memory_rss",
+          "crossSeriesAggregation": "MEAN"
+        },
+        {
+          "color": "",
+          "compareToTimeShifted": false,
+          "aggregation": "MEAN",
+          "label": "",
+          "source": "INFRASTRUCTURE_METRICS",
+          "type": "openTelemetry",
+          "metricPath": [
+            "Others",
+            "OpenTelemetry SDK"
+          ],
+          "formatter": "number.compact",
+          "metric": "metrics.gauges.otelcol/prometheusreceiver/otelcol_process_runtime_heap_alloc_bytes",
+          "timeShift": 0,
+          "tagFilterExpression": {
+            "logicalOperator": "AND",
+            "elements": [],
+            "type": "EXPRESSION"
+          },
+          "allowedCrossSeriesAggregations": [],
+          "metricLabel": "OpenTelemetry gauge otelcol/prometheusreceiver/otelcol_process_runtime_heap_alloc_bytes",
+          "crossSeriesAggregation": "MEAN"
+        }
+      ],
+      "formatterSelected": true
+    },
+    "y2": {
+      "formatter": "number.detailed",
+      "renderer": "line",
+      "metrics": []
+    },
+    "type": "TIME_SERIES"
+  }
+}]

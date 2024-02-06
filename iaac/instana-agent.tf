@@ -26,7 +26,7 @@ resource "helm_release" "instana_agent" {
 
   set {
     name = "zone.name"
-    value = "otel-demo-kind"
+    value = "eks-josh"
   }
 
   set {
@@ -36,6 +36,6 @@ resource "helm_release" "instana_agent" {
 
   set {
     name = "cluster.name"
-    value = "kind-test-cluster"
+    value = "eks-test-cluster"
   }
 }
