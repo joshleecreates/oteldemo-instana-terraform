@@ -1,5 +1,5 @@
 resource "instana_custom_dashboard" "collector-dashboard" {
-  title = "Colletor Dashboard"
+  title = "Collector Dashboard"
 
   access_rule { 
     access_type = "READ_WRITE"

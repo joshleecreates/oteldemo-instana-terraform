@@ -1,7 +1,21 @@
-- [ ] Add configuration for the Instana agent to accept OTel
-- [ ] Add configuration for the OTel collector to forward data to the Instana agent
-- [ ] EUM?
+# Quickstart with Instana and the OpenTelemetry Demo using Terraform and Helm
 
-1. Create a KIND cluster in podman using the default settings
-2. `terraform apply`
-3. Access the site at `localhost:9090`
+## Prerequisites
+
+This repository assumes that you have access to a Kubernetes cluster via `kubectl`/`helm`. You will also need Terraform or OpenTofu.
+
+## Install the Agent and Demo
+
+In the `otel-demo` directory:
+
+1. `terraform init` to install Terraform dependencies
+2. Create a file, `terraform.tfvars` with your Instana agent key and SaaS endpoint
+3. `terraform apply` will use the Helm provider to deploy the Instana Agent and the OpenTelemetry Demo project to your cluster. A namespace for the agent will also be created
+
+## Create a custom dashboard using the Instana Terraform Provider
+
+In the `instana-dashboards` directory:
+
+1. `terraform init` to install Terraform dependencies.
+2. Create a file, `terraform.tfvars` with your Instana Agent API Token and SaaS tenant name.
+3. `terraform apply` will use the Instana provider to create a custom dashboard.
