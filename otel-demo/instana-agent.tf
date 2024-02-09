@@ -11,7 +11,7 @@ resource "helm_release" "instana_agent" {
   chart = "instana-agent"
 
   values = [
-    "${file("agent-configuration.yaml")}"
+    "${file("instana-agent-configuration.yaml")}"
   ]
 
   set {

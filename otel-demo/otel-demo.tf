@@ -4,7 +4,7 @@ resource "helm_release" "otel-demo" {
   chart      = "opentelemetry-demo"
   
   values = [
-    "${file("demo-values.yaml")}"
+    "${file("otel-demo-values.yaml")}"
   ]
 }
 
