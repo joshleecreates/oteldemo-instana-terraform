@@ -37,9 +37,9 @@ opentelemetry-collector:
         tls:
           insecure: true
       otlp/instana:
-        endpoint: "instana-agent.instana-agent.svc.cluster.local:4317"
-        tls:
-          insecure: true
+        endpoint: "otlp-red-saas.instana.io:4317"
+        headers:
+          x-instana-key: ${instana_key}
     service:
       pipelines:
         logs:
@@ -60,7 +60,6 @@ opentelemetry-collector:
           processors:
             - k8sattributes
             - memory_limiter
-            - filter/ottl
             - transform
             - resource
             - batch
