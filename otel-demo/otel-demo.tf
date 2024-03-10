@@ -4,7 +4,7 @@ resource "helm_release" "otel-demo" {
   chart      = "opentelemetry-demo"
   version    = "0.28.3"
   values = [
-    templatefile("${path.module}/otel-demo-values-backend.yaml.tpl", {instana_key = var.instana_key})
+    templatefile("${path.module}/otel-demo-values-agent.yaml.tpl", {instana_key = var.instana_key})
   ]
 }
 
