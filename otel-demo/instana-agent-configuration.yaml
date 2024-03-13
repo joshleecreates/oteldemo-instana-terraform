@@ -12,39 +12,8 @@ agent:
       - url: '/'  
         metricNameIncludeRegex: '.*' 
 
-    com.instana.ignore:
-      arguments:
-        # - '-javaagent:/opt/otel/opentelemetry-javaagent-all.jar'
-        # - '-javaagent:/app/opentelemetry-javaagent.jar'
-        # - '-javaagent:/tmp/opentelemetry-javaagent.jar'
-
-    com.instana.tracing:
-      extra-http-headers:
-        - traceparent
-        - tracestate
-
-    com.instana.plugin.generic.hardware:
-      enabled: true
-
     # otel-demo configurations
     com.instana.plugin.postgresql:
       user: 'ffs'
       password: 'ffs'
       database: 'postgres'
-
-    com.instana.plugin.javatrace:
-      instrumentation:
-        enabled: false
-      trace-jvms-with-problematic-agents: true
-
-    com.instana.plugin.python:
-      autotrace:
-        enabled: false
-
-    com.instana.plugin.php:
-      tracing:
-        enabled: false
-
-    com.instana.plugin.netcore:
-      tracing:
-        enabled: false

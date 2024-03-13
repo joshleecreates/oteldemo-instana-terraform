@@ -1,29 +1,3 @@
-default:
-  env:
-    - name: OTEL_SERVICE_NAME
-      valueFrom:
-        fieldRef:
-          apiVersion: v1
-          fieldPath: "metadata.labels['app.kubernetes.io/component']"
-    - name: OTEL_COLLECTOR_NAME
-      value: '{{ include "otel-demo.name" . }}-otelcol'
-    - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
-      value: cumulative
-    - name: OTEL_RESOURCE_ATTRIBUTES
-      value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo
-    - name: INSTANA_SERVICE_NAME
-      value: $(OTEL_SERVICE_NAME)
-    - name: INSTANA_AGENT_HOST
-      valueFrom:
-        fieldRef:
-          fieldPath: status.hostIP
-    - name: INSTANA_AGENT_PORT
-      value: "42699"
-    - name: OTEL_K8S_POD_UID
-      valueFrom:
-        fieldRef:
-          apiVersion: v1
-          fieldPath: metadata.uid
 opentelemetry-collector:
   config:
     exporters:
@@ -36,6 +10,7 @@ opentelemetry-collector:
         endpoint: 'http://{{ include "otel-demo.name" . }}-prometheus-server:9090/api/v1/otlp'
         tls:
           insecure: true
+      # Create an exporter to the Instana Backend
       otlp/instana:
         endpoint: "otlp-red-saas.instana.io:4317"
         headers:
